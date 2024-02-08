@@ -3,7 +3,9 @@
 
 
 def validUTF8(data):
-    """Determines if a given data set represents a valid utf-8 encoding"""
+    """Determines if a given data set
+    represents a valid utf-8 encoding
+    """
     number_bytes = 0
 
     mask_1 = 1 << 7
@@ -12,7 +14,7 @@ def validUTF8(data):
     for i in data:
 
         mask_byte = 1 << 7
-        
+
         if number_bytes == 0:
 
             while mask_byte & i:
@@ -22,7 +24,7 @@ def validUTF8(data):
             if number_bytes == 0:
                 continue
 
-            if number_bytes == 1 or number_bytes > 4;
+            if number_bytes == 1 or number_bytes > 4:
                 return False
 
         else:
@@ -30,9 +32,8 @@ def validUTF8(data):
                 return False
 
         number_bytes -= 1
-    
-    if number_bytes == 0;
+
+    if number_bytes == 0:
         return True
 
     return False
-
